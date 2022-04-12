@@ -2,7 +2,7 @@ import React from "react";
 
 const Header = () => {
   return (
-    <React.Fragment>
+    <div>
       <h1>Store</h1>
       <nav>
         <li>Home</li>
@@ -10,7 +10,7 @@ const Header = () => {
         <li>Contact</li>
         <li>Cart</li>
       </nav>
-    </React.Fragment>
+    </div>
   );
 };
 
