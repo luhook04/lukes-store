@@ -1,6 +1,5 @@
 import "./App.css";
-import React from "react";
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./components/Home";
 import Products from "./components/store/Products";
@@ -8,8 +7,8 @@ import ShoppingCart from "./components/ShoppingCart";
 import Header from "./components/Header";
 
 const App = () => {
-  const [ cost, setCost ] = useState(0);
-  const [ cart, setCart ] = useState([]);
+  // const [ cost, setCost ] = useState(0);
+  // const [ cart, setCart ] = useState([]);
   const [ store, setStore ] = useState([]);
 
   useEffect(() => {
@@ -21,10 +20,11 @@ const App = () => {
     const response = await fetch(url);
     const data = await response.json();
     setStore(data);
+    console.log(data);
   };
 
   return (
-    <Router>
+    <Router basename="/">
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
