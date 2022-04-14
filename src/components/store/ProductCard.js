@@ -5,7 +5,7 @@ const ProductCard = ({ key, name, price, image }) => {
     <div key={key}>
       <img src={image} alt={name} />
       <h3>{name}</h3>
-      <h3>{price}</h3>
+      <h3>${price.toFixed(2)}</h3>
       <button>Add to cart</button>
     </div>
   );
