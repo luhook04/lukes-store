@@ -23,13 +23,11 @@ const App = () => {
   };
 
   const addItem = (e) => {
-    const cart = [];
     const item = {
       name  : e.target.parentNode.children[1].textContent,
       price : e.target.parentNode.children[2].textContent
     };
-    cart.push(item);
-    setCart(cart);
+    setCart((prevCart) => [ ...prevCart, item ]);
   };
 
   return (
