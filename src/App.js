@@ -7,7 +7,6 @@ import ShoppingCart from "./components/ShoppingCart";
 import Header from "./components/Header";
 
 const App = () => {
-  // const [ cost, setCost ] = useState(0);
   // const [ cart, setCart ] = useState([]);
   const [ store, setStore ] = useState([]);
 
@@ -22,6 +21,8 @@ const App = () => {
     setStore(data);
     console.log(data);
   };
+
+  const addIitem = () => {};
 
   return (
     <Router basename="/">
