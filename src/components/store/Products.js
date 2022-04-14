@@ -1,7 +1,7 @@
 import React from "react";
 import ProductCard from "./ProductCard";
 
-const Products = ({ store }) => {
+const Products = ({ store, addItem }) => {
   const products = store.map((product) => {
     return (
       <ProductCard
@@ -9,6 +9,7 @@ const Products = ({ store }) => {
         name={product.title}
         price={product.price}
         image={product.image}
+        addItem={addItem}
       />
     );
   });

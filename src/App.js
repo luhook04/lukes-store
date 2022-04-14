@@ -7,7 +7,7 @@ import ShoppingCart from "./components/ShoppingCart";
 import Header from "./components/Header";
 
 const App = () => {
-  // const [ cart, setCart ] = useState([]);
+  const [ cart, setCart ] = useState([]);
   const [ store, setStore ] = useState([]);
 
   useEffect(() => {
@@ -22,15 +22,24 @@ const App = () => {
     console.log(data);
   };
 
-  const addIitem = () => {};
+  const addItem = (e) => {
+    const item = {
+      name  : e.target.parentNode.children[1].textContent,
+      price : e.target.parentNode.children[2].textContent
+    };
+    setCart(item);
+  };
 
   return (
     <Router basename="/">
-      <Header />
+      <Header cart={cart} />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/shop" element={<Products store={store} />} />
-        <Route path="/cart" element={<ShoppingCart />} />
+        <Route
+          path="/shop"
+          element={<Products store={store} addItem={addItem} />}
+        />
+        <Route path="/cart" element={<ShoppingCart cart={cart} />} />
       </Routes>
     </Router>
   );
