@@ -33,6 +33,15 @@ describe("Shopping Cart", () => {
     ).toMatch("pants");
   });
 
+  it("doesn't render message when cart has items", () => {
+    render(<ShoppingCart cart={cart} />);
+    expect(
+      screen.queryByRole("heading", {
+        name : "Your cart is currently empty"
+      })
+    ).not.toBeInTheDocument();
+  });
+
   it("renders message when cart is empty", () => {
     render(<ShoppingCart cart={[]} />);
     expect(

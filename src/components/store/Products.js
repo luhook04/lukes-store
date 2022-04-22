@@ -1,7 +1,7 @@
 import React from "react";
 import ProductCard from "./ProductCard";
 
-const Products = ({ store, addItem }) => {
+const Products = ({ addItem, store }) => {
   const products = store.map((product) => {
     return (
       <ProductCard

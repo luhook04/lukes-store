@@ -5,7 +5,7 @@ const CartItem = ({ name, price, image }) => {
     <div>
       <img src={image} alt={name} />
       <h2>{name}</h2>
-      <h2>{price}</h2>
+      <h2>${price.toFixed(2)}</h2>
     </div>
   );
 };

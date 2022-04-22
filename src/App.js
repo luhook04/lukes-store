@@ -23,17 +23,17 @@ const App = () => {
 
   const addItem = (e) => {
     const item = {
+      image : e.target.parentNode.children[0].src,
       name  : e.target.parentNode.children[1].textContent,
-      price : e.target.parentNode.children[2].textContent,
-      image : e.target.parentNode.children[0].src
+      price : e.target.parentNode.children[2].textContent.replace("$", "")
     };
-    console.log(e.target.parentNode.children[0].src);
+
     setCart((prevCart) => [ ...prevCart, item ]);
   };
 
   return (
     <Router basename="/">
-      <Header />
+      <Header cart={cart} />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route
