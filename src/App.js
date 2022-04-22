@@ -25,7 +25,9 @@ const App = () => {
     const item = {
       image : e.target.parentNode.children[0].src,
       name  : e.target.parentNode.children[1].textContent,
-      price : e.target.parentNode.children[2].textContent.replace("$", "")
+      price : Number(
+        e.target.parentNode.children[2].textContent.replace("$", "")
+      )
     };
 
     setCart((prevCart) => [ ...prevCart, item ]);
