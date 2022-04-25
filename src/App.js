@@ -14,13 +14,6 @@ const App = () => {
     fetchStore();
   }, []);
 
-  useEffect(
-    () => {
-      console.log(cart);
-    },
-    [ cart ]
-  );
-
   const fetchStore = async () => {
     const url = "https://fakestoreapi.com/products";
     const response = await fetch(url);
@@ -55,6 +48,10 @@ const App = () => {
       );
     }
   };
+
+  const incrementItem = () => {};
+
+  const decrementItem = () => {};
 
   return (
     <Router basename="/">

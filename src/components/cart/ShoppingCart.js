@@ -6,13 +6,14 @@ const ShoppingCart = ({ cart }) => {
 
   if (cart.length !== 0) {
     const items = cart.map((item, index) => {
-      total += item.price;
+      total += item.price * item.quantity;
       return (
         <CartItem
           key={index}
           image={item.image}
           name={item.name}
           price={item.price}
+          quantity={item.quantity}
         />
       );
     });
