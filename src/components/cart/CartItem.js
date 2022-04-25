@@ -6,6 +6,10 @@ const CartItem = ({ name, price, image }) => {
       <img src={image} alt={name} />
       <h2>{name}</h2>
       <h2>${price.toFixed(2)}</h2>
+      <div>
+        <button>-</button>
+        <button>+</button>
+      </div>
     </div>
   );
 };
