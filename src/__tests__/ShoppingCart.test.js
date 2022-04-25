@@ -49,4 +49,11 @@ describe("Shopping Cart", () => {
         .textContent
     ).toMatch("Your cart is currently empty");
   });
+
+  it("renders correct price", () => {
+    render(<ShoppingCart cart={cart} />);
+    expect(screen.getByRole("heading", { level: 3 }).textContent).toMatch(
+      "60"
+    );
+  });
 });
