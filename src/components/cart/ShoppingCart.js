@@ -24,6 +24,7 @@ const ShoppingCart = ({ cart, incrementItem, decrementItem }) => {
       <div>
         <h3>Total: ${total.toFixed(2)}</h3>
         <div className="cart-grid">{items}</div>
+        <button>Check out</button>
       </div>
     );
   }
