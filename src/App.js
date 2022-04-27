@@ -9,6 +9,7 @@ import ShoppingCart from "./components/cart/ShoppingCart";
 const App = () => {
   const [ cart, setCart ] = useState([]);
   const [ store, setStore ] = useState([]);
+  const [ cartCount, setCartCount ] = useState(0);
 
   useEffect(() => {
     fetchStore();
@@ -22,6 +23,7 @@ const App = () => {
   };
 
   const addItem = (e) => {
+    setCartCount(cartCount + 1);
     const alreadyInCart = cart
       .map((cartItem) => cartItem.name)
       .includes(e.target.parentNode.children[1].textContent);
@@ -50,6 +52,7 @@ const App = () => {
   };
 
   const incrementItem = (e) => {
+    setCartCount(cartCount + 1);
     const itemName =
       e.target.parentNode.parentNode.children[1].textContent;
     setCart(
@@ -63,6 +66,7 @@ const App = () => {
   };
 
   const decrementItem = (e) => {
+    setCartCount(cartCount - 1);
     const itemName =
       e.target.parentNode.parentNode.children[1].textContent;
     console.log(itemName);
@@ -81,7 +85,7 @@ const App = () => {
 
   return (
     <Router basename="/">
-      <Header cart={cart} />
+      <Header cartCount={cartCount} />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route

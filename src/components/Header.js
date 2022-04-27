@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const Header = () => {
+const Header = ({ cartCount }) => {
   return (
     <div>
       <h1>Store</h1>
@@ -9,7 +9,7 @@ const Header = () => {
         <Link to="/">Home</Link>
         <Link to="/shop">Products</Link>
         <Link to="/cart">
-          &#128722;<span>1</span>
+          &#128722;<span>{cartCount}</span>
         </Link>
       </nav>
     </div>
