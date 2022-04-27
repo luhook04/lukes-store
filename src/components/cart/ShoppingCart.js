@@ -1,7 +1,7 @@
 import React from "react";
 import CartItem from "./CartItem";
 
-const ShoppingCart = ({ cart }) => {
+const ShoppingCart = ({ cart, incrementItem, decrementItem }) => {
   let total = 0;
 
   if (cart.length !== 0) {
@@ -14,6 +14,8 @@ const ShoppingCart = ({ cart }) => {
           name={item.name}
           price={item.price}
           quantity={item.quantity}
+          incrementItem={incrementItem}
+          decrementItem={decrementItem}
         />
       );
     });

@@ -49,9 +49,35 @@ const App = () => {
     }
   };
 
-  const incrementItem = () => {};
+  const incrementItem = (e) => {
+    const itemName =
+      e.target.parentNode.parentNode.children[1].textContent;
+    setCart(
+      cart.map(
+        (cartItem) =>
+          cartItem.name === itemName
+            ? { ...cartItem, quantity: cartItem.quantity + 1 }
+            : cartItem
+      )
+    );
+  };
 
-  const decrementItem = () => {};
+  const decrementItem = (e) => {
+    const itemName =
+      e.target.parentNode.parentNode.children[1].textContent;
+    console.log(itemName);
+
+    const newCart = cart
+      .filter((item) => item.name !== itemName || item.quantity > 1)
+      .map(
+        (cartItem) =>
+          cartItem.name === itemName
+            ? { ...cartItem, quantity: cartItem.quantity - 1 }
+            : cartItem
+      );
+    console.log(newCart);
+    setCart(newCart);
+  };
 
   return (
     <Router basename="/">
@@ -62,7 +88,16 @@ const App = () => {
           path="/shop"
           element={<Products store={store} addItem={addItem} />}
         />
-        <Route path="/cart" element={<ShoppingCart cart={cart} />} />
+        <Route
+          path="/cart"
+          element={
+            <ShoppingCart
+              cart={cart}
+              incrementItem={incrementItem}
+              decrementItem={decrementItem}
+            />
+          }
+        />
       </Routes>
     </Router>
   );

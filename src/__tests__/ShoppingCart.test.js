@@ -1,20 +1,24 @@
 import ShoppingCart from "../components/cart/ShoppingCart";
 import React from "react";
 import { render, screen } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
 
 // setup props
 const cart = [
   {
-    name  : "hat",
-    price : 10
+    name     : "hat",
+    price    : 10,
+    quantity : 1
   },
   {
-    name  : "shirt",
-    price : 20
+    name     : "shirt",
+    price    : 20,
+    quantity : 2
   },
   {
-    name  : "pants",
-    price : 30
+    name     : "pants",
+    price    : 30,
+    quantity : 1
   }
 ];
 
@@ -53,7 +57,7 @@ describe("Shopping Cart", () => {
   it("renders correct price", () => {
     render(<ShoppingCart cart={cart} />);
     expect(screen.getByRole("heading", { level: 3 }).textContent).toMatch(
-      "60"
+      "80"
     );
   });
 });
