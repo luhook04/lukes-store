@@ -75,7 +75,6 @@ const App = () => {
             ? { ...cartItem, quantity: cartItem.quantity - 1 }
             : cartItem
       );
-    console.log(newCart);
     setCart(newCart);
   };
 

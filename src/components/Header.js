@@ -10,12 +10,12 @@ const Header = ({ cart }) => {
 
   return (
     <div>
-      <h1>Store{amount}</h1>
+      <h1>Store</h1>
       <nav>
         <Link to="/">Home</Link>
         <Link to="/shop">Products</Link>
         <Link to="/cart">
-          &#128722;<span>{amount}</span>
+          &#128722;<span data-testid="amount">{amount}</span>
         </Link>
       </nav>
     </div>
