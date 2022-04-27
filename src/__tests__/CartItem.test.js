@@ -7,6 +7,7 @@ import "@testing-library/jest-dom";
 describe("CartItem", () => {
   it("button click calls incrementItem function", async () => {
     const incrementItem = jest.fn();
+    const decrementItem = jest.fn();
 
     render(
       <CartItem
@@ -15,6 +16,7 @@ describe("CartItem", () => {
         quantity={3}
         image="null"
         incrementItem={incrementItem}
+        decrementItem={decrementItem}
       />
     );
 
@@ -24,5 +26,27 @@ describe("CartItem", () => {
     await userEvent.click(button);
 
     expect(incrementItem).toHaveBeenCalledTimes(2);
+  });
+  it("button click calls decrementItem function", async () => {
+    const decrementItem = jest.fn();
+    const incrementItem = jest.fn();
+
+    render(
+      <CartItem
+        name="shirt"
+        price={10}
+        quantity={3}
+        image="null"
+        incrementItem={incrementItem}
+        decrementItem={decrementItem}
+      />
+    );
+
+    const button = screen.getByRole("button", { name: "-" });
+
+    await userEvent.click(button);
+    await userEvent.click(button);
+
+    expect(decrementItem).toHaveBeenCalledTimes(2);
   });
 });
