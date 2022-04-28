@@ -12,7 +12,7 @@ const Header = ({ cart }) => {
     <div className="header">
       <h1>Luke's Store</h1>
       <nav>
-        <Link to="/">Home</Link>
+        <Link to="/lukes-store">Home</Link>
         <Link to="/shop">Products</Link>
         <Link className="cart-icon" to="/cart">
           &#128717;<span className="badge" data-testid="amount">
