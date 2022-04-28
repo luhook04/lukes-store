@@ -1,6 +1,6 @@
 # Luke's Store
 
-Live Preview: 
+[Live Preview](https://luhook04.github.io/lukes-store/)
 
 This app is basically just your average online store. You can add/subtract items to cart while the total will dynamically update. Also if you have duplicate items in your cart it won't render the item twice, but instead will increase the quantity of the item in your cart. 
 
