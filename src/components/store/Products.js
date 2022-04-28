@@ -14,7 +14,7 @@ const Products = ({ addItem, store }) => {
     );
   });
 
-  return <div className="grid">{products}</div>;
+  return <div className="product-grid">{products}</div>;
 };
 
 export default Products;

@@ -21,15 +21,15 @@ const ShoppingCart = ({ cart, incrementItem, decrementItem }) => {
     });
 
     return (
-      <div>
-        <h3>Total: ${total.toFixed(2)}</h3>
+      <div className="shopping-cart">
         <div className="cart-grid">{items}</div>
-        <button>Check out</button>
+        <h3>Total: ${total.toFixed(2)}</h3>
+        <button>Checkout!</button>
       </div>
     );
   }
   else {
-    return <h2>Your cart is currently empty</h2>;
+    return <h2 className="empty-message">Your cart is currently empty</h2>;
   }
 };
 

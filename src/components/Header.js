@@ -9,13 +9,15 @@ const Header = ({ cart }) => {
   });
 
   return (
-    <div>
-      <h1>Store</h1>
+    <div className="header">
+      <h1>Luke's Store</h1>
       <nav>
         <Link to="/">Home</Link>
         <Link to="/shop">Products</Link>
-        <Link to="/cart">
-          &#128722;<span data-testid="amount">{amount}</span>
+        <Link className="cart-icon" to="/cart">
+          &#128717;<span className="badge" data-testid="amount">
+            {amount}
+          </span>
         </Link>
       </nav>
     </div>
