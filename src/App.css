@@ -200,10 +200,6 @@ body {
 }
 
 @media only screen and (max-width: 439px) {
-  #root {
-    width: fit-content;
-  }
-
   nav {
     width: fit-content;
   }
