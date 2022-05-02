@@ -12,7 +12,7 @@ code {
     monospace;
 }
 
-@media only screen and (max-width: 439px) {
+@media only screen and (max-width: 500px) {
   #root {
     width: fit-content;
   }

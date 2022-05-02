@@ -198,9 +198,3 @@ body {
     justify-content: space-between;
   }
 }
-
-@media only screen and (max-width: 439px) {
-  nav {
-    width: fit-content;
-  }
-}
