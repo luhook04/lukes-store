@@ -16,4 +16,4 @@ Technology:
 - React Router
 - Async/Await
 - FakeStore API
-- Responsive Design
+
