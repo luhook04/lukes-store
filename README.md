@@ -7,7 +7,7 @@ This app is a mimics the functionality of an online store, up to the point of ac
 While making this app, I wanted to get good practice using the React Testing Library to make sure the user interface is working as planned. Along with that, I also wanted to brush up on how to route components in React. 
 
 Technology:
-- Javascript
+- JavaScript
 - HTML
 - CSS
 - React
