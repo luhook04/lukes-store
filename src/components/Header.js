@@ -15,7 +15,8 @@ const Header = ({ cart }) => {
         <Link to="/lukes-store">Home</Link>
         <Link to="/shop">Products</Link>
         <Link className="cart-icon" to="/cart">
-          &#128717;<span className="badge" data-testid="amount">
+          &#128717;
+          <span className="badge" data-testid="amount">
             {amount}
           </span>
         </Link>

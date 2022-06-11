@@ -7,8 +7,8 @@ import Header from "./components/Header";
 import ShoppingCart from "./components/cart/ShoppingCart";
 
 const App = () => {
-  const [ cart, setCart ] = useState([]);
-  const [ store, setStore ] = useState([]);
+  const [cart, setCart] = useState([]);
+  const [store, setStore] = useState([]);
 
   useEffect(() => {
     fetchStore();
@@ -28,22 +28,20 @@ const App = () => {
 
     if (!alreadyInCart) {
       const item = {
-        image    : e.target.parentNode.children[0].src,
-        name     : e.target.parentNode.children[1].textContent,
-        price    : Number(
+        image: e.target.parentNode.children[0].src,
+        name: e.target.parentNode.children[1].textContent,
+        price: Number(
           e.target.parentNode.children[2].textContent.replace("$", "")
         ),
-        quantity : 1
+        quantity: 1,
       };
-      setCart((prevCart) => [ ...prevCart, item ]);
-    }
-    else if (alreadyInCart) {
+      setCart((prevCart) => [...prevCart, item]);
+    } else if (alreadyInCart) {
       setCart(
-        cart.map(
-          (cartItem) =>
-            cartItem.name === e.target.parentNode.children[1].textContent
-              ? { ...cartItem, quantity: cartItem.quantity + 1 }
-              : cartItem
+        cart.map((cartItem) =>
+          cartItem.name === e.target.parentNode.children[1].textContent
+            ? { ...cartItem, quantity: cartItem.quantity + 1 }
+            : cartItem
         )
       );
     }
@@ -53,11 +51,10 @@ const App = () => {
     const itemName =
       e.target.parentNode.parentNode.children[1].textContent;
     setCart(
-      cart.map(
-        (cartItem) =>
-          cartItem.name === itemName
-            ? { ...cartItem, quantity: cartItem.quantity + 1 }
-            : cartItem
+      cart.map((cartItem) =>
+        cartItem.name === itemName
+          ? { ...cartItem, quantity: cartItem.quantity + 1 }
+          : cartItem
       )
     );
   };
@@ -69,11 +66,10 @@ const App = () => {
 
     const newCart = cart
       .filter((item) => item.name !== itemName || item.quantity > 1)
-      .map(
-        (cartItem) =>
-          cartItem.name === itemName
-            ? { ...cartItem, quantity: cartItem.quantity - 1 }
-            : cartItem
+      .map((cartItem) =>
+        cartItem.name === itemName
+          ? { ...cartItem, quantity: cartItem.quantity - 1 }
+          : cartItem
       );
     setCart(newCart);
   };
