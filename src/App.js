@@ -1,6 +1,6 @@
 import './App.css';
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import Home from './components/Home';
 import Products from './components/store/Products';
 import Header from './components/Header';
@@ -72,7 +72,7 @@ const App = () => {
   };
 
   return (
-    <Router basename="/">
+    <>
       <Header cart={cart} />
       <Routes>
         <Route path="/" element={<Home />} />
@@ -91,7 +91,7 @@ const App = () => {
           }
         />
       </Routes>
-    </Router>
+    </>
   );
 };
 
