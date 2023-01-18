@@ -1,5 +1,5 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Header = ({ cart }) => {
   let amount = 0;
@@ -12,7 +12,7 @@ const Header = ({ cart }) => {
     <div className="header">
       <h1>Luke's Store</h1>
       <nav>
-        <Link to="/lukes-store">Home</Link>
+        <Link to="/">Home</Link>
         <Link to="/shop">Products</Link>
         <Link className="cart-icon" to="/cart">
           &#128717;
