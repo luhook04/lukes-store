@@ -8,7 +8,7 @@ import { createRoot } from 'react-dom/client';
 const container = document.getElementById('root');
 const root = createRoot(container); // createRoot(container!) if you use TypeScript
 root.render(
-  <Router basename="/lukes-store">
+  <Router basename="/">
     <App />
   </Router>
 );
