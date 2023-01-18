@@ -1,25 +1,24 @@
-import "./App.css";
-import React, { useState, useEffect } from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Home from "./components/Home";
-import Products from "./components/store/Products";
-import Header from "./components/Header";
-import ShoppingCart from "./components/cart/ShoppingCart";
+import './App.css';
+import React, { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Home from './components/Home';
+import Products from './components/store/Products';
+import Header from './components/Header';
+import ShoppingCart from './components/cart/ShoppingCart';
 
 const App = () => {
   const [cart, setCart] = useState([]);
   const [store, setStore] = useState([]);
 
   useEffect(() => {
+    const fetchStore = async () => {
+      const url = 'https://fakestoreapi.com/products';
+      const response = await fetch(url);
+      const data = await response.json();
+      setStore(data);
+    };
     fetchStore();
   }, []);
-
-  const fetchStore = async () => {
-    const url = "https://fakestoreapi.com/products";
-    const response = await fetch(url);
-    const data = await response.json();
-    setStore(data);
-  };
 
   const addItem = (e) => {
     const alreadyInCart = cart
@@ -31,7 +30,7 @@ const App = () => {
         image: e.target.parentNode.children[0].src,
         name: e.target.parentNode.children[1].textContent,
         price: Number(
-          e.target.parentNode.children[2].textContent.replace("$", "")
+          e.target.parentNode.children[2].textContent.replace('$', '')
         ),
         quantity: 1,
       };
@@ -48,8 +47,7 @@ const App = () => {
   };
 
   const incrementItem = (e) => {
-    const itemName =
-      e.target.parentNode.parentNode.children[1].textContent;
+    const itemName = e.target.parentNode.parentNode.children[1].textContent;
     setCart(
       cart.map((cartItem) =>
         cartItem.name === itemName
@@ -60,8 +58,7 @@ const App = () => {
   };
 
   const decrementItem = (e) => {
-    const itemName =
-      e.target.parentNode.parentNode.children[1].textContent;
+    const itemName = e.target.parentNode.parentNode.children[1].textContent;
     console.log(itemName);
 
     const newCart = cart
